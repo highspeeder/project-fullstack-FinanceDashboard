@@ -85,33 +85,33 @@ public class fileLoader implements ApplicationRunner {
                 transactionRepository.save(transaction);
             }
 
-            // // Product와 Transaction 간의 다대다 관계를 표현하는 ProductTransaction 데이터 생성 및 저장
-            // for (Product product : products) {
-            // for (String transactionId : product.getTransactions()) {
-            // for (Transaction transaction : transactions) {
-            // if (transactionId.equals(transaction.getId())) {
-            // ProductTransaction productTransaction = new ProductTransaction();
-            // productTransaction.setProduct(product);
-            // productTransaction.setTransaction(transaction);
+            // Product와 Transaction 간의 다대다 관계를 표현하는 ProductTransaction 데이터 생성 및 저장
+            for (Product product : products) {
+                for (String transactionId : product.getTransactions()) {
+                    for (Transaction transaction : transactions) {
+                        if (transactionId.equals(transaction.getId())) {
+                            ProductTransaction productTransaction = new ProductTransaction();
+                            productTransaction.setProduct(product);
+                            productTransaction.setTransaction(transaction);
 
-            // productTransactionRepository.save(productTransaction);
-            // }
-            // }
-            // }
-            // }
-            // for (Transaction transaction : transactions) {
-            // for (String productId : transaction.getProducts()) {
-            // for (Product product : products) {
-            // if (productId.equals(product.getId())) {
-            // ProductTransaction productTransaction = new ProductTransaction();
-            // productTransaction.setProduct(product);
-            // productTransaction.setTransaction(transaction);
+                            productTransactionRepository.save(productTransaction);
+                        }
+                    }
+                }
+            }
+            for (Transaction transaction : transactions) {
+                for (String productId : transaction.getProducts()) {
+                    for (Product product : products) {
+                        if (productId.equals(product.getId())) {
+                            ProductTransaction productTransaction = new ProductTransaction();
+                            productTransaction.setProduct(product);
+                            productTransaction.setTransaction(transaction);
 
-            // productTransactionRepository.save(productTransaction);
-            // }
-            // }
-            // }
-            // }
+                            productTransactionRepository.save(productTransaction);
+                        }
+                    }
+                }
+            }
         }
     }
 }
