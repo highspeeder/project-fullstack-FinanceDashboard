@@ -1,0 +1,38 @@
+#default
+spring:
+  profiles:
+    active: dev
+
+---
+spring:
+  config:
+    activate:
+      on-profile: dev
+  datasource:
+    url: jdbc:mysql://localhost:3306/dev_dashboard
+    username: root
+    password: ${local_db_password}
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create
+basic:
+  loading:
+    message: "dev 환경으로 실행"
+
+---
+spring:
+  config:
+    activate:
+      on-profile: product
+  datasource:
+    url: jdbc:mysql://localhost:3306/dashboard
+    username: root
+    password: ${server_dashboard_db_password}
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+basic:
+  loading:
+    message: "product 환경으로 실행"
