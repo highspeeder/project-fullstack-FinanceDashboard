@@ -212,10 +212,11 @@ const Row3 = () => {
           ></Box>
         </Box>
         <Typography margin="0 1rem" variant="h6">
-          Orci aliquam enim vel diam. Venenatis euismod id donec mus lorem etiam
-          ullamcorper odio sed. Ipsum non sed gravida etiam urna egestas
-          molestie volutpat et. Malesuada quis pretium aliquet lacinia ornare
-          sed. In volutpat nullam at est id cum pulvinar nunc.
+          이 대시보드 웹페이지는 실시간으로 업데이트되는 데이터를 기반으로
+          사용자의 비즈니스 성과를 시각적으로 보여줍니다. 간결하고 직관적인
+          인터페이스를 통해 주요 지표와 동향을 파악하고, 세부 정보를 자세히
+          분석할 수 있습니다. 다양한 그래프와 차트를 통해 매출, 비용, 성과 등
+          다양한 요소를 시각화하여 데이터를 한눈에 파악할 수 있습니다.
         </Typography>
       </DashboardBox>
     </>
